@@ -1,0 +1,57 @@
+[user]
+	email = lain.dono@gmail.com
+	name = Lain-dono
+[push]
+	default = simple
+[credential]
+	helper = cache
+
+[color]
+	ui = auto
+#	ui = true
+[color "branch"]
+	current = yellow reverse
+	local = yellow
+	remote = green
+[color "diff"]
+	meta = yellow bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
+[color "status"]
+	added = yellow
+	changed = green
+	untracked = cyan
+
+[core]
+	whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
+	autocrlf = input
+	safecrlf = true
+	editor = vim
+	excludesfile = ~/.gitignore
+
+# Add aliases to your ~/.gitconfig file:
+
+[alias]
+	#status = status --short --branch --ignored
+	#st = status
+	st = status --short --branch --ignored
+	ci = commit
+	br = branch
+	co = checkout
+	ds = diff --stat
+	df = diff
+	dc = diff --cached
+	lg = log -p
+	lol = log --graph --decorate --pretty=oneline --abbrev-commit
+	lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+	ls = ls-files
+	hist = log --decorate --pretty=format:\"%C(yellow)%h%Creset %ad | %s%d [%an]\" --graph --date=short  --decorate
+	type = cat-file -t
+	dump = cat-file -p
+
+	# Show files ignored by git:
+	ign = ls-files -o -i --exclude-standard
+
+	todo = grep -EIn "TODO|FIXME|XXX"
