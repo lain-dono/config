@@ -1,0 +1,2 @@
+scgi_port = localhost:5000
+directory = ~/downloads/torrents
