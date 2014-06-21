@@ -7,7 +7,8 @@ filetype off
 filetype plugin indent off
 
 set rtp+=~/.vim/bundle/vundle/
-set rtp+=~/www/powerline/bindings/vim
+set runtimepath+=$GOROOT/misc/vim
+"set rtp+=~/www/powerline/bindings/vim
 
 "call vam#ActivateAddons(['powerline'])
 
@@ -23,6 +24,9 @@ Bundle 'scrooloose/nerdtree'
 "Bundle 'Lokaltog/vim-powerline'
 " airline
 Bundle 'bling/vim-airline'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ''
+let g:airline#extensions#tabline#left_alt_sep = '|'
 " supertab(not work whis gocode)
 Bundle 'ervandew/supertab'
 Bundle 'kien/ctrlp.vim'
@@ -30,13 +34,31 @@ Bundle 'Blackrush/vim-gocode'
 Bundle 'bufexplorer.zip'
 " Bundle 'tyru/restart.vim'
 " Bundle 'koron/minimap-vim'
+Bundle 'editorconfig/editorconfig-vim'
 
 Bundle 'wavded/vim-stylus'
 Bundle 'slim-template/vim-slim'
 Bundle 'kchmck/vim-coffee-script'
+Bundle 'airblade/vim-gitgutter'
+let g:gitgutter_highlight_lines = 1
+let g:gitgutter_realtime = 1
+Bundle 'Pychimp/vim-sol'
+Bundle 'edkolev/tmuxline.vim'
+let g:tmuxline_separators = {
+    \ 'left' : '',
+    \ 'left_alt': ':',
+    \ 'right' : '',
+    \ 'right_alt' : '',
+    \ 'space' : ' '}
+
+filetype off
+filetype plugin indent off
+filetype plugin indent on
+syntax on
 
 " colorscheme _my
-colorscheme summerfruit256
+" colorscheme summerfruit256
+colorscheme sol-term
 filetype plugin indent on
 syntax on
 
@@ -62,7 +84,8 @@ set showcmd
 set laststatus=2
 set timeout timeoutlen=1000 ttimeoutlen=50
 " Фолдинг по отсупам
-"set foldmethod=syntax
+set foldmethod=indent
+set foldlevel=2
 " Размер таба
 set tabstop=4
 set shiftwidth=4

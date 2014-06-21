@@ -77,7 +77,7 @@ DISABLE_AUTO_TITLE="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(tmuxinator tmux common-aliases colorize cp vi-mode go history colored-man lol sudo)
+plugins=(tmuxinator tmux common-aliases colorize cp vi-mode go history colored-man sudo)
 
 
 source $ZSH/oh-my-zsh.sh
@@ -110,13 +110,15 @@ source $ZSH/oh-my-zsh.sh
 
 
 #разукрашиваем ls и автодополнение
-export LS_COLORS='no=00;37:fi=00;37:di=01;36:ln=04;36:pi=33:so=01;35:do=01;35:bd=33;01:cd=33;01:or=31;01:su=37:sg=30:tw=30:ow=34:st=37:ex=01;31:*.cmd=01;31:*.exe=01;31:*.com=01;31:*.btm=01;31:*.sh=01;31:*.run=01;31:*.tar=33:*.tgz=33:*.arj=33:*.taz=33:*.lzh=33:*.zip=33:*.z=33:*.Z=33:*.gz=33:*.bz2=33:*.deb=33:*.rpm=33:*.jar=33:*.rar=33:*.jpg=32:*.jpeg=32:*.gif=32:*.bmp=32:*.pbm=32:*.pgm=32:*.ppm=32:*.tga=32:*.xbm=32:*.xpm=32:*.tif=32:*.tiff=32:*.png=32:*.mov=34:*.mpg=34:*.mpeg=34:*.avi=34:*.fli=34:*.flv=34:*.3gp=34:*.mp4=34:*.divx=34:*.gl=32:*.dl=32:*.xcf=32:*.xwd=32:*.flac=35:*.mp3=35:*.mpc=35:*.ogg=35:*.wav=35:*.m3u=35:';
+#export LS_COLORS='no=00;37:fi=00;37:di=01;36:ln=04;36:pi=33:so=01;35:do=01;35:bd=33;01:cd=33;01:or=31;01:su=37:sg=30:tw=30:ow=34:st=37:ex=01;31:*.cmd=01;31:*.exe=01;31:*.com=01;31:*.btm=01;31:*.sh=01;31:*.run=01;31:*.tar=33:*.tgz=33:*.arj=33:*.taz=33:*.lzh=33:*.zip=33:*.z=33:*.Z=33:*.gz=33:*.bz2=33:*.deb=33:*.rpm=33:*.jar=33:*.rar=33:*.jpg=32:*.jpeg=32:*.gif=32:*.bmp=32:*.pbm=32:*.pgm=32:*.ppm=32:*.tga=32:*.xbm=32:*.xpm=32:*.tif=32:*.tiff=32:*.png=32:*.mov=34:*.mpg=34:*.mpeg=34:*.avi=34:*.fli=34:*.flv=34:*.3gp=34:*.mp4=34:*.divx=34:*.gl=32:*.dl=32:*.xcf=32:*.xwd=32:*.flac=35:*.mp3=35:*.mpc=35:*.ogg=35:*.wav=35:*.m3u=35:';
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 
 export EDITOR=vim
 export LESSCHARSET=UTF-8
 
 #[[ -x $(whence -p most) ]] && export PAGER=$(whence -p most)
+#export PAGER=more
+export PAGER=less
 
 if [ -f ~/.aliases ]; then
 	#. ~/.aliases
@@ -124,4 +126,57 @@ fi
 
 alias gti='git'
 compdef _git gti=git
+
+alias ll='grc ls -lFh --color=yes'
+compdef _ls ll=ls
+
+alias slow='ponysay -b unicode -f $HOME/ponysay-chars/slowpoke.pony '
+
+#alias wtf='dmesg'
+#alias onoz='cat /var/log/errors.log'
+alias rtfm='man'
+
+alias :3='echo'
+alias visible='echo'
+alias invisible='cat'
+alias moar='more'
+alias tldr='less'
+alias alwayz='tail -f'
+
+alias icanhas='mkdir'
+alias gimmeh='touch'
+alias donotwant='rm'
+alias dontwant='rm'
+alias dowant='cp'
+alias gtfo='mv'
+alias nowai='chmod'
+
+alias hai='cd'
+alias iz='ls'
+#alias plz='pwd'
+alias ihasbucket='df -h'
+
+alias inur='locate'
+alias iminurbase='finger'
+
+alias btw='nice'
+alias obtw='nohup'
+
+#alias nomz='ps aux'
+#alias nomnom='killall'
+
+alias byes='exit'
+alias cya='reboot'
+alias kthxbai='halt'
+
+alias pwned='ssh'
+
+#alias hackzor='git init'
+#alias rulz='git push'
+#alias bringz='git pull'
+#alias chicken='git add'
+#alias oanward='git commit -m'
+#alias ooanward='git commit -am'
+#alias letcat='git checkout'
+#alias violenz='git rebase'
 

@@ -34,8 +34,16 @@
 # Add aliases to your ~/.gitconfig file:
 
 [alias]
+	master = checkout master
+	dev = checkout develop
+
+	release = flow release
+	feature = flow feature
+	fix = flow hotfix
+	support = flow support
 	#status = status --short --branch --ignored
 	#st = status
+	a = add
 	st = status --short --branch --ignored
 	ci = commit
 	br = branch

@@ -23,6 +23,7 @@ if [ -d "$HOME/.local/bin" ] ; then
 	PATH="$HOME/.local/bin:$PATH"
 fi
 
+export GOROOT=/usr/local/go
 export GOPATH=$HOME/gocode
 PATH="$GOPATH/bin:/usr/local/go/bin:$PATH"
 
